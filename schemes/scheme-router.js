@@ -114,4 +114,9 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.put("/:id/steps/:id2", (req, res) => {
+    Schemes.updateStep(req.params.id, req.params.id2, req.body)
+        .then(() => res.status(201).json(req.body))
+})
+
 module.exports = router;
